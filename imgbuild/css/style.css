@@ -1,0 +1,30 @@
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 60px 0;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+#canvas-image {
+  width: 205px;
+  height: 385px;
+  z-index: 0;
+}
+#canvas-shapes {
+  z-index: 10;
+  background-color: #000;
+}
+p {
+  color: #8F9EBB;
+  display: block;
+  font-size: 16px;
+  position: absolute;
+  z-index: 20;
+  font-family: arial;
+  top: 30px;
+  left: 30px;
+}

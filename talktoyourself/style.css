@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  color: #fff;
+  background: #000000;
+  perspective: 500px;
+}
+
+.phone {
+  width: 250px;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  background: hsla(0, 0%, 0%, 0.1);
+  padding: 0.5rem 0.75rem;
+  transform: translateZ(-40px) rotateX(4deg) rotateY(15deg);
+  transform-style: preserve-3d;
+}
+.phone__chat {
+  height: 350px;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+  transform: translateZ(50px);
+}
+
+.phone__chat .chat--message {
+  padding: 0.5rem 0.75rem;
+  margin: 1rem 0;
+  background: hsla(231, 12%, 86%, 0.2);
+  align-self: flex-start;
+  animation: intro 0.3s ease-out both;
+}
+.phone__chat .chat--message:nth-child(even) {
+  align-self: flex-end;
+  text-align: right;
+}
+.phone__chat .chat--message:first-of-type {
+  animation-delay: 0.2s;
+}
+@keyframes intro {
+  from {
+    transform: translateY(150%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.phone__form {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  background: hsla(231, 12%, 86%, 0.1);
+  border-radius: inherit;
+  padding: 0.5rem 0.75rem;
+  transform: translateZ(10px);
+}
+
+.phone__form input {
+  flex-grow: 1;
+  width: 0;
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  padding-left: 0rem;
+}
+.phone__form input::placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+.phone__form button {
+  margin-left: 1rem;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  width: 38px;
+  height: 38px;
+  padding: 0.25rem;
+  background: linear-gradient(
+      hsla(231, 12%, 86%, 0.2),
+      hsla(231, 12%, 86%, 0.2)
+    ),
+    #2d2e40;
+  position: relative;
+}
+.phone__form button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.phone__form button:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: color(#1a0000);
+  border-radius: 50%;
+  z-index: -5;
+}
